@@ -160,6 +160,9 @@ sai_status_t SwitchBCM81724::set_switch_default_attributes()
 
     CHECK_STATUS(set(SAI_OBJECT_TYPE_SWITCH, m_switch_id, &attr));
 
+    attr.id = SAI_SWITCH_ATTR_TYPE;
+    attr.value.s32 = SAI_SWITCH_TYPE_PHY;
+
     CHECK_STATUS(set(SAI_OBJECT_TYPE_SWITCH, m_switch_id, &attr));
 
     attr.id = SAI_SWITCH_ATTR_FIRMWARE_MAJOR_VERSION;
